@@ -1,73 +1,73 @@
 #!/bin/bash
 
 # Run the Python script
-python -u main_cvoa.py ./AI/AI.csv 1 > ./AI/prove_AI_funcobj1.txt &
-python -u main_cvoa.py ./AI/AI.csv 2 > ./AI/prove_AI_funcobj2.txt &
-python -u main_cvoa.py ./BA/BA.csv 1 > ./BA/prove_BA_funcobj1.txt &
-python -u main_cvoa.py ./BA/BA.csv 2 > ./BA/prove_BA_funcobj2.txt &
-python -u main_cvoa.py ./BK/BK.csv 1 > ./BK/prove_BK_funcobj1.txt &
-python -u main_cvoa.py ./BK/BK.csv 2 > ./BK/prove_BK_funcobj2.txt &
-python -u main_cvoa.py ./BL/BL.csv 1 > ./BL/prove_BL_funcobj1.txt &
-python -u main_cvoa.py ./BL/BL.csv 2 > ./BL/prove_BL_funcobj2.txt &
-python -u main_cvoa.py ./BU/BU.csv 1 > ./BU/prove_BU_funcobj1.txt &
-python -u main_cvoa.py ./BU/BU.csv 2 > ./BU/prove_BU_funcobj2.txt &
-python -u main_cvoa.py ./CA/CA.csv 1 > ./CA/prove_CA_funcobj1.txt &
-python -u main_cvoa.py ./CA/CA.csv 2 > ./CA/prove_CA_funcobj2.txt &
-python -u main_cvoa.py ./CN/CN.csv 1 > ./CN/prove_CN_funcobj1.txt &
-python -u main_cvoa.py ./CN/CN.csv 2 > ./CN/prove_CN_funcobj2.txt &
-python -u main_cvoa.py ./CO/CO.csv 1 > ./CO/prove_CO_funcobj1.txt &
-python -u main_cvoa.py ./CO/CO.csv 2 > ./CO/prove_CO_funcobj2.txt &
-python -u main_cvoa.py ./ED/ED.csv 1 > ./ED/prove_ED_funcobj1.txt &
-python -u main_cvoa.py ./ED/ED.csv 2 > ./ED/prove_ED_funcobj2.txt &
-python -u main_cvoa.py ./EV/EV.csv 1 > ./EV/prove_EV_funcobj1.txt &
-python -u main_cvoa.py ./EV/EV.csv 2 > ./EV/prove_EV_funcobj2.txt &
-python -u main_cvoa.py ./FA/FA.csv 1 > ./FA/prove_FA_funcobj1.txt &
-python -u main_cvoa.py ./FA/FA.csv 2 > ./FA/prove_FA_funcobj2.txt &
-python -u main_cvoa.py ./FR/FR.csv 1 > ./FR/prove_FR_funcobj1.txt &
-python -u main_cvoa.py ./FR/FR.csv 2 > ./FR/prove_FR_funcobj2.txt &
-python -u main_cvoa.py ./HH/HH.csv 1 > ./HH/prove_HH_funcobj1.txt &
-python -u main_cvoa.py ./HH/HH.csv 2 > ./HH/prove_HH_funcobj2.txt &
-python -u main_cvoa.py ./ki/ki.csv 1 > ./ki/prove_ki_funcobj1.txt &
-python -u main_cvoa.py ./ki/ki.csv 2 > ./ki/prove_ki_funcobj2.txt &
-python -u main_cvoa.py ./lo/lo.csv 1 > ./lo/prove_lo_funcobj1.txt &
-python -u main_cvoa.py ./lo/lo.csv 2 > ./lo/prove_lo_funcobj2.txt &
-python -u main_cvoa.py ./MO/MO.csv 1 > ./MO/prove_MO_funcobj1.txt &
-python -u main_cvoa.py ./MO/MO.csv 2 > ./MO/prove_MO_funcobj2.txt &
-python -u main_cvoa.py ./nt/nt.csv 1 > ./nt/prove_nt_funcobj1.txt &
-python -u main_cvoa.py ./nt/nt.csv 2 > ./nt/prove_nt_funcobj2.txt &
-python -u main_cvoa.py ./pl/pl.csv 1 > ./pl/prove_pl_funcobj1.txt &
-python -u main_cvoa.py ./pl/pl.csv 2 > ./pl/prove_pl_funcobj2.txt &
-python -u main_cvoa.py ./PN/PN.csv 1 > ./PN/prove_PN_funcobj1.txt &
-python -u main_cvoa.py ./PN/PN.csv 2 > ./PN/prove_PN_funcobj2.txt &
-python -u main_cvoa.py ./PO/PO.csv 1 > ./PO/prove_PO_funcobj1.txt &
-python -u main_cvoa.py ./PO/PO.csv 2 > ./PO/prove_PO_funcobj2.txt &
-python -u main_cvoa.py ./PT/PT.csv 1 > ./PT/prove_PT_funcobj1.txt &
-python -u main_cvoa.py ./PT/PT.csv 2 > ./PT/prove_PT_funcobj2.txt &
-python -u main_cvoa.py ./pw/pw.csv 1 > ./pw/prove_pw_funcobj1.txt &
-python -u main_cvoa.py ./pw/pw.csv 2 > ./pw/prove_pw_funcobj2.txt &
-python -u main_cvoa.py ./py/py.csv 1 > ./py/prove_py_funcobj1.txt &
-python -u main_cvoa.py ./py/py.csv 2 > ./py/prove_py_funcobj2.txt &
-python -u main_cvoa.py ./QU/QU.csv 1 > ./QU/prove_QU_funcobj1.txt &
-python -u main_cvoa.py ./QU/QU.csv 2 > ./QU/prove_QU_funcobj2.txt &
-python -u main_cvoa.py ./RE/RE.csv 1 > ./RE/prove_RE_funcobj1.txt &
-python -u main_cvoa.py ./RE/RE.csv 2 > ./RE/prove_RE_funcobj2.txt &
-python -u main_cvoa.py ./sc/sc.csv 1 > ./sc/prove_sc_funcobj1.txt &
-python -u main_cvoa.py ./sc/sc.csv 2 > ./sc/prove_sc_funcobj2.txt &
-python -u main_cvoa.py ./SL/SL.csv 1 > ./SL/prove_SL_funcobj1.txt &
-python -u main_cvoa.py ./SL/SL.csv 2 > ./SL/prove_SL_funcobj2.txt &
-python -u main_cvoa.py ./SP/SP.csv 1 > ./SP/prove_SP_funcobj1.txt &
-python -u main_cvoa.py ./SP/SP.csv 2 > ./SP/prove_SP_funcobj2.txt &
-python -u main_cvoa.py ./TR/TR.csv 1 > ./TR/prove_TR_funcobj1.txt &
-python -u main_cvoa.py ./TR/TR.csv 2 > ./TR/prove_TR_funcobj2.txt &
-python -u main_cvoa.py ./TV/TV.csv 1 > ./TV/prove_TV_funcobj1.txt &
-python -u main_cvoa.py ./TV/TV.csv 2 > ./TV/prove_TV_funcobj2.txt &
-python -u main_cvoa.py ./TZ/TZ.csv 1 > ./TZ/prove_TZ_funcobj1.txt &
-python -u main_cvoa.py ./TZ/TZ.csv 2 > ./TZ/prove_TZ_funcobj2.txt &
-python -u main_cvoa.py ./US/US.csv 1 > ./US/prove_US_funcobj1.txt &
-python -u main_cvoa.py ./US/US.csv 2 > ./US/prove_US_funcobj2.txt &
-python -u main_cvoa.py ./vy/vy.csv 1 > ./vy/prove_vy_funcobj1.txt &
-python -u main_cvoa.py ./vy/vy.csv 2 > ./vy/prove_vy_funcobj2.txt &
-python -u main_cvoa.py ./WA/WA.csv 1 > ./WA/prove_WA_funcobj1.txt &
-python -u main_cvoa.py ./WA/WA.csv 2 > ./WA/prove_WA_funcobj2.txt &
-python -u main_cvoa.py ./WI/WI.csv 1 > ./WI/prove_WI_funcobj1.txt &
-python -u main_cvoa.py ./WI/WI.csv 2 > ./WI/prove_WI_funcobj2.txt
+python -u main_cvoa.py ./AI/AI.csv 1 > ./AI/prove_AI_funcobj1.txt 20 ./AI/prove_AI_funcobj1.png &
+python -u main_cvoa.py ./AI/AI.csv 2 > ./AI/prove_AI_funcobj2.txt 20 ./AI/prove_AI_funcobj2.png &
+python -u main_cvoa.py ./BA/BA.csv 1 > ./BA/prove_BA_funcobj1.txt 20 ./BA/prove_BA_funcobj1.png &
+python -u main_cvoa.py ./BA/BA.csv 2 > ./BA/prove_BA_funcobj2.txt 20 ./BA/prove_BA_funcobj1.png &
+python -u main_cvoa.py ./BK/BK.csv 1 > ./BK/prove_BK_funcobj1.txt 20 ./BK/prove_BK_funcobj1.png &
+python -u main_cvoa.py ./BK/BK.csv 2 > ./BK/prove_BK_funcobj2.txt 20 ./BK/prove_BK_funcobj1.png &
+python -u main_cvoa.py ./BL/BL.csv 1 > ./BL/prove_BL_funcobj1.txt 20 ./BL/prove_BL_funcobj1.png &
+python -u main_cvoa.py ./BL/BL.csv 2 > ./BL/prove_BL_funcobj2.txt 20 ./BL/prove_BL_funcobj1.png &
+python -u main_cvoa.py ./BU/BU.csv 1 > ./BU/prove_BU_funcobj1.txt 20 ./BU/prove_BU_funcobj1.png &
+python -u main_cvoa.py ./BU/BU.csv 2 > ./BU/prove_BU_funcobj2.txt 20 ./BU/prove_BU_funcobj1.png &
+python -u main_cvoa.py ./CA/CA.csv 1 > ./CA/prove_CA_funcobj1.txt 20 ./CA/prove_CA_funcobj1.png &
+python -u main_cvoa.py ./CA/CA.csv 2 > ./CA/prove_CA_funcobj2.txt 20 ./CA/prove_CA_funcobj1.png &
+python -u main_cvoa.py ./CN/CN.csv 1 > ./CN/prove_CN_funcobj1.txt 20 ./CN/prove_CN_funcobj1.png &
+python -u main_cvoa.py ./CN/CN.csv 2 > ./CN/prove_CN_funcobj2.txt 20 ./CN/prove_CN_funcobj1.png &
+python -u main_cvoa.py ./CO/CO.csv 1 > ./CO/prove_CO_funcobj1.txt 20 ./CO/prove_CO_funcobj1.png &
+python -u main_cvoa.py ./CO/CO.csv 2 > ./CO/prove_CO_funcobj2.txt 20 ./CO/prove_CO_funcobj1.png &
+python -u main_cvoa.py ./ED/ED.csv 1 > ./ED/prove_ED_funcobj1.txt 20 ./ED/prove_ED_funcobj1.png &
+python -u main_cvoa.py ./ED/ED.csv 2 > ./ED/prove_ED_funcobj2.txt 20 ./ED/prove_ED_funcobj1.png &
+python -u main_cvoa.py ./EV/EV.csv 1 > ./EV/prove_EV_funcobj1.txt 20 ./EV/prove_EV_funcobj1.png &
+python -u main_cvoa.py ./EV/EV.csv 2 > ./EV/prove_EV_funcobj2.txt 20 ./EV/prove_EV_funcobj1.png &
+python -u main_cvoa.py ./FA/FA.csv 1 > ./FA/prove_FA_funcobj1.txt 20 ./FA/prove_FA_funcobj1.png &
+python -u main_cvoa.py ./FA/FA.csv 2 > ./FA/prove_FA_funcobj2.txt 20 ./FA/prove_FA_funcobj1.png &
+python -u main_cvoa.py ./FR/FR.csv 1 > ./FR/prove_FR_funcobj1.txt 20 ./FR/prove_FR_funcobj1.png &
+python -u main_cvoa.py ./FR/FR.csv 2 > ./FR/prove_FR_funcobj2.txt 20 ./FR/prove_FR_funcobj1.png &
+python -u main_cvoa.py ./HH/HH.csv 1 > ./HH/prove_HH_funcobj1.txt 20 ./HH/prove_HH_funcobj1.png &
+python -u main_cvoa.py ./HH/HH.csv 2 > ./HH/prove_HH_funcobj2.txt 20 ./HH/prove_HH_funcobj1.png &
+python -u main_cvoa.py ./ki/ki.csv 1 > ./ki/prove_ki_funcobj1.txt 20 ./ki/prove_ki_funcobj1.png &
+python -u main_cvoa.py ./ki/ki.csv 2 > ./ki/prove_ki_funcobj2.txt 20 ./ki/prove_ki_funcobj1.png &
+python -u main_cvoa.py ./lo/lo.csv 1 > ./lo/prove_lo_funcobj1.txt 20 ./lo/prove_lo_funcobj1.png &
+python -u main_cvoa.py ./lo/lo.csv 2 > ./lo/prove_lo_funcobj2.txt 20 ./lo/prove_lo_funcobj1.png &
+python -u main_cvoa.py ./MO/MO.csv 1 > ./MO/prove_MO_funcobj1.txt 20 ./MO/prove_MO_funcobj1.png &
+python -u main_cvoa.py ./MO/MO.csv 2 > ./MO/prove_MO_funcobj2.txt 20 ./MO/prove_MO_funcobj1.png &
+python -u main_cvoa.py ./nt/nt.csv 1 > ./nt/prove_nt_funcobj1.txt 20 ./nt/prove_nt_funcobj1.png &
+python -u main_cvoa.py ./nt/nt.csv 2 > ./nt/prove_nt_funcobj2.txt 20 ./nt/prove_nt_funcobj1.png &
+python -u main_cvoa.py ./pl/pl.csv 1 > ./pl/prove_pl_funcobj1.txt 20 ./pl/prove_pl_funcobj1.png &
+python -u main_cvoa.py ./pl/pl.csv 2 > ./pl/prove_pl_funcobj2.txt 20 ./pl/prove_pl_funcobj1.png &
+python -u main_cvoa.py ./PN/PN.csv 1 > ./PN/prove_PN_funcobj1.txt 20 ./PN/prove_PN_funcobj1.png &
+python -u main_cvoa.py ./PN/PN.csv 2 > ./PN/prove_PN_funcobj2.txt 20 ./PN/prove_PN_funcobj1.png &
+python -u main_cvoa.py ./PO/PO.csv 1 > ./PO/prove_PO_funcobj1.txt 20 ./PO/prove_PO_funcobj1.png &
+python -u main_cvoa.py ./PO/PO.csv 2 > ./PO/prove_PO_funcobj2.txt 20 ./PO/prove_PO_funcobj1.png &
+python -u main_cvoa.py ./PT/PT.csv 1 > ./PT/prove_PT_funcobj1.txt 20 ./PT/prove_PT_funcobj1.png &
+python -u main_cvoa.py ./PT/PT.csv 2 > ./PT/prove_PT_funcobj2.txt 20 ./PT/prove_PT_funcobj1.png &
+python -u main_cvoa.py ./pw/pw.csv 1 > ./pw/prove_pw_funcobj1.txt 20 ./pw/prove_pw_funcobj1.png &
+python -u main_cvoa.py ./pw/pw.csv 2 > ./pw/prove_pw_funcobj2.txt 20 ./pw/prove_pw_funcobj1.png &
+python -u main_cvoa.py ./py/py.csv 1 > ./py/prove_py_funcobj1.txt 20 ./py/prove_py_funcobj1.png &
+python -u main_cvoa.py ./py/py.csv 2 > ./py/prove_py_funcobj2.txt 20 ./py/prove_py_funcobj1.png &
+python -u main_cvoa.py ./QU/QU.csv 1 > ./QU/prove_QU_funcobj1.txt 20 ./QU/prove_QU_funcobj1.png &
+python -u main_cvoa.py ./QU/QU.csv 2 > ./QU/prove_QU_funcobj2.txt 20 ./QU/prove_QU_funcobj1.png &
+python -u main_cvoa.py ./RE/RE.csv 1 > ./RE/prove_RE_funcobj1.txt 20 ./RE/prove_RE_funcobj1.png &
+python -u main_cvoa.py ./RE/RE.csv 2 > ./RE/prove_RE_funcobj2.txt 20 ./RE/prove_RE_funcobj1.png &
+python -u main_cvoa.py ./sc/sc.csv 1 > ./sc/prove_sc_funcobj1.txt 20 ./sc/prove_sc_funcobj1.png &
+python -u main_cvoa.py ./sc/sc.csv 2 > ./sc/prove_sc_funcobj2.txt 20 ./sc/prove_sc_funcobj1.png &
+python -u main_cvoa.py ./SL/SL.csv 1 > ./SL/prove_SL_funcobj1.txt 20 ./SL/prove_SL_funcobj1.png &
+python -u main_cvoa.py ./SL/SL.csv 2 > ./SL/prove_SL_funcobj2.txt 20 ./SL/prove_SL_funcobj1.png &
+python -u main_cvoa.py ./SP/SP.csv 1 > ./SP/prove_SP_funcobj1.txt 20 ./SP/prove_SP_funcobj1.png &
+python -u main_cvoa.py ./SP/SP.csv 2 > ./SP/prove_SP_funcobj2.txt 20 ./SP/prove_SP_funcobj1.png &
+python -u main_cvoa.py ./TR/TR.csv 1 > ./TR/prove_TR_funcobj1.txt 20 ./TR/prove_TR_funcobj1.png &
+python -u main_cvoa.py ./TR/TR.csv 2 > ./TR/prove_TR_funcobj2.txt 20 ./TR/prove_TR_funcobj1.png &
+python -u main_cvoa.py ./TV/TV.csv 1 > ./TV/prove_TV_funcobj1.txt 20 ./TV/prove_TV_funcob1.png &
+python -u main_cvoa.py ./TV/TV.csv 2 > ./TV/prove_TV_funcobj2.txt 20 ./TV/prove_TV_funcobj1.png &
+python -u main_cvoa.py ./TZ/TZ.csv 1 > ./TZ/prove_TZ_funcobj1.txt 20 ./TZ/prove_TZ_funcobj1.png &
+python -u main_cvoa.py ./TZ/TZ.csv 2 > ./TZ/prove_TZ_funcobj2.txt 20 ./TZ/prove_TZ_funcobj1.png &
+python -u main_cvoa.py ./US/US.csv 1 > ./US/prove_US_funcobj1.txt 20 ./US/prove_US_funcobj1.png &
+python -u main_cvoa.py ./US/US.csv 2 > ./US/prove_US_funcobj2.txt 20 ./US/prove_US_funcobj1.png &
+python -u main_cvoa.py ./vy/vy.csv 1 > ./vy/prove_vy_funcobj1.txt 20 ./vy/prove_vy_funcobj1.png &
+python -u main_cvoa.py ./vy/vy.csv 2 > ./vy/prove_vy_funcobj2.txt 20 ./vy/prove_vy_funcobj1.png &
+python -u main_cvoa.py ./WA/WA.csv 1 > ./WA/prove_WA_funcobj1.txt 20 ./WA/prove_WA_funcobj1.png &
+python -u main_cvoa.py ./WA/WA.csv 2 > ./WA/prove_WA_funcobj2.txt 20 ./WA/prove_WA_funcobj1.png &
+python -u main_cvoa.py ./WI/WI.csv 1 > ./WI/prove_WI_funcobj1.txt 20 ./WI/prove_WI_funcobj1.png &
+python -u main_cvoa.py ./WI/WI.csv 2 > ./WI/prove_WI_funcobj2.txt 20 ./WI/prove_WI_funcobj2.png 

@@ -35,3 +35,17 @@ def calcSupport(data, individual_values, individual_attribute_types):
     support.append(support_rule)
     return support
 
+def calcRegCub(data, best_values):
+    rules_cov = 0
+    for i in data.index:
+        for bvalue in best_values:
+            verify = []
+            for c in range(len(data.columns)):
+                if (data.iloc[i,c] >= bvalue[c*2]) & (data.iloc[i,c] <= bvalue[c*2+1]):
+                   verify.append(True)
+                else:
+                   verify.append(False)
+            if all(verify):
+                rules_cov += 1
+                break
+    return rules_cov

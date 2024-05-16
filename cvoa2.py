@@ -1,5 +1,6 @@
 from copy import deepcopy
 import numpy as np
+from numpy import mean
 import sys as sys
 import random as random
 from individual import Individual
@@ -25,6 +26,7 @@ class CVOA:
         self.size = (len(data.columns))*2
         self.n_solutions = n_solutions
         self.bestSolutions = []
+        self.bestSolutionEachIteration = []
         self.objF = objF
     
     def propagateDisease(self, time):
@@ -39,6 +41,7 @@ class CVOA:
         
         # Step 2. Sort the infected list by fitness (descendent).
         self.infected = sorted(self.infected, key=lambda i: i.fitness, reverse=True)
+        self.bestSolutionEachIteration.append(self.infected[0].fitness)
         # Step 2.1 Add individuals to the bestSolutions until n_solutions is reached
         i=0
         while (len(self.bestSolutions)<self.n_solutions) and i<(len(self.infected)-1):
@@ -145,6 +148,9 @@ class CVOA:
                 epidemic = False
             time += 1
         return self.bestSolutions    
+    
+    def getBestFitnessEachIt(self):
+        return self.bestSolutionEachIteration
     
     def fitness(self, individual_values, individual_attributeType):
         support_ant = 0

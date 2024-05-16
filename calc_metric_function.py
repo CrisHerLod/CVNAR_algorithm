@@ -21,8 +21,10 @@ def calcMetric(data,supports):
         cf2 = 0
     if support_cons !=0:
         lift = conf*len(data.index)/support_cons
+        gain = (conf*len(data.index) - support_cons)/len(data.index)
     else:
         lift = 0
+        gain = 0
     leverage = ((support_rule*len(data.index)) - (support_ant*support_cons)) / pow(len(data.index),2)
     leverage_norm = (leverage + 0.25) / 0.5
     leverage_norm2 = (support_rule/len(data.index)) - ((support_ant/len(data.index))*(support_cons/len(data.index)))
@@ -38,5 +40,6 @@ def calcMetric(data,supports):
     metrics.append(cf2)
     metrics.append(leverage_norm2)
     metrics.append(accuracy2)
+    metrics.append(gain)
 
     return metrics

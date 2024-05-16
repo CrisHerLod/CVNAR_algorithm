@@ -4,7 +4,9 @@ import math
 import numpy as np
 
 class Individual:
+    P_MUTATION_ATT = 0.25
     ATT_NUMBER = 2
+    P_ANTECEDENT = 0.7
 
     def __init__(self, data):
         self.data = data
@@ -131,7 +133,9 @@ class Individual:
             interv_att = random.randint(0, total_size-1)
             if interv not in mutated_intervals:
                 # Infect the interval in the position idx_interval of the individual.
+                #if random.random() > self.P_MUTATION_ATT:
                 mutated.infectInterval(idx_interval=interv)
+                #else:
                 mutated_intervals.append(interv)
             if interv_att not in mutated_intervals_attributes:
                 mutated.infectAttribute(idx_interval=interv_att)

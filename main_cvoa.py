@@ -7,16 +7,19 @@ import numpy as np
 from cvoa2 import CVOA
 import time as time
 from support_function import calcSupport
+from support_function import calcRegCub
 from calc_metric_function import calcMetric
 
-if len(sys.argv) < 3:
+if len(sys.argv) < 4:
     print("Error: the argument number must be three")
     sys.exit()
 
 data = pd.read_csv(sys.argv[1], sep = ';')
 objF = sys.argv[2]
+max_time = int(sys.argv[3])
 
 epochs=[]
+iterations=[]
 best_solutions=[]
 best_values=[]
 best_attributeType=[]
@@ -33,8 +36,10 @@ cf_metric=[]
 cf2_metric=[]
 leverage2_metric=[]
 accuracy2_metric=[]
+gain=[]
+best_fitness_each_Iteration=[]
 
-cvoa = CVOA(max_time = 20, data = data, n_solutions=10, objF = objF)
+cvoa = CVOA(max_time = max_time, data = data, n_solutions=100, objF = objF)
 
 time1 = int(round(time.time() * 1000))
 solutions = cvoa.run() 
@@ -60,12 +65,19 @@ for n in range(len(solutions)):
     cf2_metric.append(calculateMetrics[6])
     leverage2_metric.append(calculateMetrics[7])
     accuracy2_metric.append(calculateMetrics[8])
+    gain.append(calculateMetrics[9])
+
+
+iterations = range(1,max_time+1)
+best_fitness_each_Iteration = cvoa.getBestFitnessEachIt()
+calculateRegCov = calcRegCub(data, best_values)
 
 print("Execution time: " + str(time2 / 60000) + " mins")
 print("Best solutions: " + str(best_solutions))
 print("Intervals values: " + str(best_values))
 print("Attribute type values: " + str(best_attributeType))
 print("Best fitness: " + str(best_fitness))
+print("Best Fitness for iteration: " + str(best_fitness_each_Iteration))
 print("Ant support: " + str(ant_support))
 print("Cons support: " + str(cons_support))
 print("Rules support: " + str(rule_support))
@@ -78,9 +90,11 @@ print("Accuracy metric 2: " + str(accuracy2_metric))
 print("Support metric: " + str(support_metric))
 print("Certainty Factor metric: " + str(cf_metric))
 print("Certainty Factor metric 2: " + str(cf2_metric))
+print("Gain: " + str(gain))
+print("Covered records number: " + str(calculateRegCov))
 
 fig, ax = plt.subplots()
 ax.set_ylabel('Fitness')
 ax.set_title('Iteration')
-plt.plot(epochs, best_fitness)
-plt.savefig('./fitness_function.png')
+plt.plot(iterations, best_fitness_each_Iteration)
+plt.savefig(sys.argv[4])
