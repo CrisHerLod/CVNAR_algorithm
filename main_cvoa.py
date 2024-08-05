@@ -9,6 +9,8 @@ import time as time
 from support_function import calcSupport
 from support_function import calcRegCub
 from calc_metric_function import calcMetric
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
 
 if len(sys.argv) < 4:
     print("Error: the argument number must be three")
@@ -38,7 +40,15 @@ leverage2_metric=[]
 accuracy2_metric=[]
 gain=[]
 best_fitness_each_Iteration=[]
+mean_fitness_each_Iteration=[]
+std_fitness_each_Iteration=[]
 
+# Normalize the data
+min_max_scaler = MinMaxScaler()
+scaled_values = min_max_scaler.fit(data)
+scaled_data_values = min_max_scaler.transform(data)
+scaled_data_values_df = pd.DataFrame(scaled_data_values, columns=data.columns)
+data = scaled_data_values_df
 cvoa = CVOA(max_time = max_time, data = data, n_solutions=100, objF = objF)
 
 time1 = int(round(time.time() * 1000))
@@ -70,7 +80,9 @@ for n in range(len(solutions)):
 
 iterations = range(1,max_time+1)
 best_fitness_each_Iteration = cvoa.getBestFitnessEachIt()
-calculateRegCov = calcRegCub(data, best_values)
+mean_fitness_each_Iteration = cvoa.getMeanFitnessEachIt()
+std_fitness_each_Iteration = cvoa.getStdFitnessEachIt()
+calculateRegCov = calcRegCub(data, best_values, best_attributeType)
 
 print("Execution time: " + str(time2 / 60000) + " mins")
 print("Best solutions: " + str(best_solutions))
@@ -78,6 +90,8 @@ print("Intervals values: " + str(best_values))
 print("Attribute type values: " + str(best_attributeType))
 print("Best fitness: " + str(best_fitness))
 print("Best Fitness for iteration: " + str(best_fitness_each_Iteration))
+print("Mean Fitness for iteration: " + str(mean_fitness_each_Iteration))
+print("Std Fitness for iteration: " + str(std_fitness_each_Iteration))
 print("Ant support: " + str(ant_support))
 print("Cons support: " + str(cons_support))
 print("Rules support: " + str(rule_support))
@@ -96,5 +110,8 @@ print("Covered records number: " + str(calculateRegCov))
 fig, ax = plt.subplots()
 ax.set_ylabel('Fitness')
 ax.set_title('Iteration')
-plt.plot(iterations, best_fitness_each_Iteration)
+ax.plot(iterations, best_fitness_each_Iteration, label='Best Fitness')
+ax.plot(iterations, mean_fitness_each_Iteration, label='Mean Fitness')
+ax.plot(iterations, std_fitness_each_Iteration, label='Std Fitness')
+ax.legend()
 plt.savefig(sys.argv[4])

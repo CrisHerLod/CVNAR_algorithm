@@ -4,6 +4,8 @@ from numpy import mean
 import sys as sys
 import random as random
 from individual import Individual
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
 
 class CVOA:
     MIN_SPREAD = 0
@@ -27,6 +29,8 @@ class CVOA:
         self.n_solutions = n_solutions
         self.bestSolutions = []
         self.bestSolutionEachIteration = []
+        self.meanEachIteration = []
+        self.stddevEachIteration = []
         self.objF = objF
     
     def propagateDisease(self, time):
@@ -42,6 +46,12 @@ class CVOA:
         # Step 2. Sort the infected list by fitness (descendent).
         self.infected = sorted(self.infected, key=lambda i: i.fitness, reverse=True)
         self.bestSolutionEachIteration.append(self.infected[0].fitness)
+        total_fitness = sum(i.fitness for i in self.infected)
+        mean_fitness = total_fitness / len(self.infected)
+        self.meanEachIteration.append(mean_fitness)
+        std_dev_fitness = np.std([i.fitness for i in self.infected])
+        self.stddevEachIteration.append(std_dev_fitness)
+        
         # Step 2.1 Add individuals to the bestSolutions until n_solutions is reached
         i=0
         while (len(self.bestSolutions)<self.n_solutions) and i<(len(self.infected)-1):
@@ -127,16 +137,29 @@ class CVOA:
     def run(self):
         epidemic = True
         time = 0
-        # Step 1. Infect to Patient Zero
+
+        # Step 1. Normalize the data
+        '''min_max_scaler = MinMaxScaler()
+        scaled_values = min_max_scaler.fit(self.data)
+        print("Describe no scaled_values ", self.data.describe())
+        print("No scaled_values ", self.data)
+        scaled_data_values = min_max_scaler.transform(self.data)
+        scaled_data_values_df = pd.DataFrame(scaled_data_values, columns=self.data.columns)
+        self.data = scaled_data_values_df
+        print("Describe Scaled_values ", self.data.describe())
+        print("Scaled_values ", self.data)'''
+        # Step 2. Infect to Patient Zero
+        #pz = Individual.random(scaled_data_values_df)
         pz = Individual.random(self.data)
         while Individual.validateAttributeTypes(pz,pz.attributeType) == 0 or self.fitness(pz.values, pz.attributeType) == 0:
+            #pz = Individual.random(scaled_data_values_df)
             pz = Individual.random(self.data)
         self.infected.append(pz)
         print("Patient Zero: " + str(pz) + "\n")
         print("Patient Zero attribute values: " + str(pz.values) + "\n")
         print("Patient Zero attribute type: " + str(pz.attributeType) + "\n")
         self.bestSolutions.append(deepcopy(pz))
-        # Step 2. The main loop for the disease propagation
+        # Step 3. The main loop for the disease propagation
         while epidemic and time < self.max_time:
             self.propagateDisease(time)
             print("Iteration ", (time + 1))
@@ -151,6 +174,12 @@ class CVOA:
     
     def getBestFitnessEachIt(self):
         return self.bestSolutionEachIteration
+
+    def getMeanFitnessEachIt(self):
+        return self.meanEachIteration
+    
+    def getStdFitnessEachIt(self):
+        return self.stddevEachIteration
     
     def fitness(self, individual_values, individual_attributeType):
         support_ant = 0
