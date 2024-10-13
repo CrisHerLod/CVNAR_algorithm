@@ -57,3 +57,36 @@ def calcRegCub(data, best_values, best_attribute_types):
                 rules_cov += 1
                 break
     return rules_cov
+
+def generate_rules(interval_values, attribute_type_values):
+    rules = []
+
+    for rule_index in range(len(interval_values)):
+        intervals = interval_values[rule_index]
+        attribute_types = attribute_type_values[rule_index]    
+
+        antecedents = []
+        consequents = []
+
+        num_attributes = len(attribute_types) // 2
+
+        for i in range(num_attributes):
+            lower_index = i * 2
+            upper_index = lower_index + 1
+
+
+            lower_value = round(intervals[lower_index], 2)
+            upper_value = round(intervals[upper_index], 2) 
+
+            if attribute_types[lower_index] == 1:
+                antecedents.append(f"A{i} [{lower_value},{upper_value}]")
+            elif attribute_types[lower_index] == 2:
+                consequents.append(f"A{i} [{lower_value},{upper_value}]")
+
+        antecedents_str = " ^ ".join(antecedents)
+        consequents_str = " ^ ".join(consequents)
+        rule_str = f"{antecedents_str} -> {consequents_str}"
+
+        rules.append(rule_str)
+
+    return rules

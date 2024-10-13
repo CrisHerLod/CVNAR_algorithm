@@ -8,6 +8,7 @@ from cvoa2 import CVOA
 import time as time
 from support_function import calcSupport
 from support_function import calcRegCub
+from support_function import generate_rules
 from calc_metric_function import calcMetric
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
@@ -83,6 +84,7 @@ best_fitness_each_Iteration = cvoa.getBestFitnessEachIt()
 mean_fitness_each_Iteration = cvoa.getMeanFitnessEachIt()
 std_fitness_each_Iteration = cvoa.getStdFitnessEachIt()
 calculateRegCov = calcRegCub(data, best_values, best_attributeType)
+avg_bestfitness_distance = cvoa.getAvgBestFitnessDist()
 
 print("Execution time: " + str(time2 / 60000) + " mins")
 print("Best solutions: " + str(best_solutions))
@@ -106,6 +108,10 @@ print("Certainty Factor metric: " + str(cf_metric))
 print("Certainty Factor metric 2: " + str(cf2_metric))
 print("Gain: " + str(gain))
 print("Covered records number: " + str(calculateRegCov))
+rules = generate_rules(best_values,best_attributeType)
+for rule in rules:
+    print("Rule: ", rule)
+print("Average best fitness distance: " + str(avg_bestfitness_distance))
 
 fig, ax = plt.subplots()
 ax.set_ylabel('Fitness')

@@ -31,6 +31,7 @@ class CVOA:
         self.bestSolutionEachIteration = []
         self.meanEachIteration = []
         self.stddevEachIteration = []
+        self.avgBestFitnessDistance = []
         self.objF = objF
     
     def propagateDisease(self, time):
@@ -72,6 +73,8 @@ class CVOA:
         else:
             if self.fitness(self.bestSolutions[0].values,self.bestSolutions[0].attributeType)==None or self.fitness(self.infected[0].values,self.infected[0].attributeType) > self.fitness(self.bestSolutions[0].values,self.bestSolutions[0].attributeType):
                 self.bestSolutions[0] = deepcopy(self.infected[0])
+        # Step 3.1 Calculate distance between the best solutions
+        self.avgBestFitnessDistance.append(self.avgBestFitnessDist())
         # Step 4. Assess indexes to point super-spreaders and deaths parts of the infected list.
         if len(self.infected)==1:
             idx_super_spreader=1
@@ -242,5 +245,27 @@ class CVOA:
         support = support_rule / len(self.data.index)
         metricResult = cf + conf + support
         return metricResult
+    
+    def avgBestFitnessDist(self):
+        distancias = []
+        if len(self.bestSolutions) > 1:
+            for i in range(len(self.bestSolutions)):
+                for j in range(i + 1, len(self.bestSolutions)):
+                    distancia = self.calcular_distancia(self.bestSolutions[i].values, self.bestSolutions[j].values)  # Usar Euclidiana o Hamming
+                    distancias.append(distancia)
+
+            promedio_distancia = sum(distancias) / len(distancias)
+        else:
+            promedio_distancia = 0
+        return promedio_distancia
+    
+    def calcular_distancia(self, regla1, regla2):
+        regla1 = np.array(regla1)
+        regla2 = np.array(regla2)
+
+        return np.linalg.norm(regla1 - regla2)
+    
+    def getAvgBestFitnessDist(self):
+        return self.avgBestFitnessDistance
                     
     
